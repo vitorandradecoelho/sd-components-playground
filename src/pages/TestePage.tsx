@@ -1,6 +1,9 @@
-import { Input, Select, LinhaTrajetoSelector } from '@vitorandradecoelho/sd-components';
+import { Input, Select, LinhaTrajetoSelector, useStyles } from '@vitorandradecoelho/sd-components';
 
 const TestePage = () => {
+  // Carregar estilos do componente
+  useStyles();
+  
   // Dados de exemplo para o LinhaTrajetoSelector
   const linhasExemplo = [
     { 
