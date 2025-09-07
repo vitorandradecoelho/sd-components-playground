@@ -1,4 +1,4 @@
-import { Input, Select, LinhaTrajetoSelector } from '@vitorandradecoelho/sd-components';
+import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';
 
 const TestePage = () => {
   // Dados de exemplo para o LinhaTrajetoSelector
