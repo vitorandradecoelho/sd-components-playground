@@ -196,10 +196,11 @@ const GuiaComponente = () => {
   return (
     <div>
       <h2>Seletor de Linha e Trajeto</h2>
-      <LinhaTrajetoSelector linhas={linhasExemplo} />
+      <LinhaTrajetoSelector linhas={linhasExemplo}
+              />
     </div>
   );
-};`;
+};`;;
 
   const fullExample = `import React from 'react';
 import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';
