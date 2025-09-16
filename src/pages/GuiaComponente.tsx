@@ -196,8 +196,7 @@ const GuiaComponente = () => {
   return (
     <div>
       <h2>Seletor de Linha e Trajeto</h2>
-      <LinhaTrajetoSelector linhas={linhasExemplo}
-              />
+      <LinhaTrajetoSelector linhas={linhasExemplo} />
     </div>
   );
 };`;
