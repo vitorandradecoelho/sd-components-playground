@@ -197,21 +197,7 @@ const GuiaComponente = () => {
     <div>
       <h2>Seletor de Linha e Trajeto</h2>
       <LinhaTrajetoSelector linhas={linhasExemplo}
-      selectedLinhaId={selectedLinhaId}
-            selectedTrajetoIds={selectedTrajetoIds}
-            onLinhaChange={(linha) => {
-              setSelectedLinhaId(linha?._id || '');
-              success(`Linha selecionada: ${linha?.descr || 'Nenhuma'}`);
-            }}
-            onTrajetoChange={(trajetos) => {
-              setSelectedTrajetoIds(trajetos.map(t => t._id));
-              success(`${trajetos.length} trajeto(s) selecionado(s)`);
-            }}
-            linhaPlaceholder="Escolha uma linha de ônibus..."
-            trajetoPlaceholder="Escolha trajetos..."
-            linhaLabel="Linha de Ônibus"
-            trajetoLabel="Trajetos"
-            />
+              />
     </div>
   );
 };`;
