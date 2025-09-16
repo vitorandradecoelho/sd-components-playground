@@ -39,7 +39,7 @@ const GuiaComponente = () => {
   const installCommand = "npm install @vitorandradecoelho/sd-components";
   const importCode = `import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';`;
   
-  const exampleData = `const linhasExemplo: Linha[] = 
+  const exampleData = `const sampleLinhas: Linha[] = 
     {
       "_id": "5e8e3bbf4be5542e43e539eb",
       "clienteId": 1314,
