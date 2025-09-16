@@ -38,9 +38,8 @@ const GuiaComponente = () => {
 
   const installCommand = "npm install @vitorandradecoelho/sd-components";
   const importCode = `import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';`;
-  
  // Dados de exemplo corrigidos
-const sampleLinhas = [
+const exampleData = [
   {
     "_id": "5e8e3bbf4be5542e43e539eb",
     "clienteId": 1314,
@@ -208,7 +207,7 @@ const MeuComponente = () => {
     <div>
       <h2>Seletor de Linha e Trajeto</h2>
       <LinhaTrajetoSelector
-        linhas={sampleLinhas}
+        linhas={exampleData}
         selectedLinhaId={selectedLinhaId}
         selectedTrajetoIds={selectedTrajetoIds}
         onLinhaChange={(linha) => {
@@ -227,7 +226,6 @@ const MeuComponente = () => {
     </div>
   );
 };
-
   const fullExample = `import React from 'react';
 import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';
 
