@@ -1,4 +1,6 @@
 import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const TestePage = () => {
   // Dados de exemplo para o LinhaTrajetoSelector
@@ -66,11 +68,16 @@ const TestePage = () => {
               
               <div>
                 <h3 className="text-lg font-medium mb-2">Select</h3>
-                <Select options={[
-                  { value: '1', label: 'Opção 1' },
-                  { value: '2', label: 'Opção 2' },
-                  { value: '3', label: 'Opção 3' }
-                ]} />
+                <Select>
+                  <SelectTrigger aria-label="Selecione uma opção">
+                    <SelectValue placeholder="Selecione uma opção" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1">Opção 1</SelectItem>
+                    <SelectItem value="2">Opção 2</SelectItem>
+                    <SelectItem value="3">Opção 3</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               
               <div>
