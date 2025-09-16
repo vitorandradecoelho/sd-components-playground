@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';
-import '@vitorandradecoelho/sd-components/dist/style.css';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -97,23 +96,97 @@ const MinhaPagina = () => {
 export default MinhaPagina;`;
 
   const linhasDemo: Linha[] = [
-    { 
-      _id: "1",
-      id: "1", 
-      clienteId: 1,
-      id_migracao: 1, 
-      descr: "Linha 1 - Centro", 
-      numero: "001",
-      trajetos: []
+    {
+      "_id": "5e8e3bbf4be5542e43e539eb",
+      "clienteId": 1314,
+      "id_migracao": 3210,
+      "descr": "01 - Esperança / Taboão",
+      "numero": "01",
+      "trajetos": [
+        {
+          "_id": "5e8e3bbf4be5542e43e539e9",
+          "id_migracao": 8639,
+          "externalId": "0",
+          "nome": "01 - Esperança / Sentido Taboão",
+          "colorIdx": 7,
+          "qtdTransmisoesInicial": 1,
+          "qtdTransmisoesFinal": 1,
+          "percentConclusao": 90,
+          "toleranciaArrasto": 5,
+          "kmTrajeto": 17.51,
+          "tempoMedioViagem": 80,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "N",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": true,
+          "ativo": true,
+          "sentido": "ida",
+          "codigosIntegracao": ["1"],
+          "raioTrajeto": 100,
+          "id": "5e8e3bbf4be5542e43e539e9"
+        },
+        {
+          "_id": "5e8e3bbf4be5542e43e539ea",
+          "id_migracao": 8640,
+          "externalId": "0",
+          "nome": "01 - Taboão / Sentido Esperança",
+          "colorIdx": 3,
+          "qtdTransmisoesInicial": 1,
+          "qtdTransmisoesFinal": 1,
+          "percentConclusao": 70,
+          "toleranciaArrasto": 5,
+          "kmTrajeto": 17.99,
+          "tempoMedioViagem": 80,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "S",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": true,
+          "ativo": true,
+          "sentido": "volta",
+          "codigosIntegracao": ["1"],
+          "raioTrajeto": 80,
+          "id": "5e8e3bbf4be5542e43e539ea"
+        }
+      ],
+      "id": "5e8e3bbf4be5542e43e539eb"
     },
-    { 
-      _id: "2",
-      id: "2", 
-      clienteId: 1,
-      id_migracao: 2, 
-      descr: "Linha 2 - Zona Norte", 
-      numero: "002",
-      trajetos: []
+    {
+      "_id": "5e8e3bbf4be5542e43e539ec",
+      "clienteId": 1314,
+      "id_migracao": 3211,
+      "descr": "02 - Centro / Vila Nova",
+      "numero": "02",
+      "trajetos": [
+        {
+          "_id": "5e8e3bbf4be5542e43e539ed",
+          "id_migracao": 8641,
+          "externalId": "0",
+          "nome": "02 - Centro / Sentido Vila Nova",
+          "colorIdx": 2,
+          "qtdTransmisoesInicial": 1,
+          "qtdTransmisoesFinal": 1,
+          "percentConclusao": 85,
+          "toleranciaArrasto": 3,
+          "kmTrajeto": 12.8,
+          "tempoMedioViagem": 65,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "N",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": false,
+          "ativo": true,
+          "sentido": "ida",
+          "codigosIntegracao": ["2"],
+          "raioTrajeto": 90,
+          "id": "5e8e3bbf4be5542e43e539ed"
+        }
+      ],
+      "id": "5e8e3bbf4be5542e43e539ec"
     }
   ];
 

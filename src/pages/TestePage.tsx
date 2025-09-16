@@ -1,46 +1,158 @@
 import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';
-import '@vitorandradecoelho/sd-components/dist/style.css';
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const TestePage = () => {
-  // Dados de exemplo para o LinhaTrajetoSelector
-  const linhasExemplo = [
-    { 
-      _id: "1",
-      id: "1", 
-      clienteId: 1,
-      id_migracao: 1, 
-      descr: "Linha 1 - Centro", 
-      cor: "#FF0000",
-      codigo: "L01",
-      numero: "001",
-      ativo: true,
-      trajetos: []
+  const sampleLinhas: Linha[] = [
+    {
+      "_id": "5e8e3bbf4be5542e43e539eb",
+      "clienteId": 1314,
+      "id_migracao": 3210,
+      "descr": "01 - Esperança / Taboão",
+      "numero": "01",
+      "trajetos": [
+        {
+          "_id": "5e8e3bbf4be5542e43e539e9",
+          "id_migracao": 8639,
+          "externalId": "0",
+          "nome": "01 - Esperança / Sentido Taboão",
+          "colorIdx": 7,
+          "qtdTransmisoesInicial": 1,
+          "qtdTransmisoesFinal": 1,
+          "percentConclusao": 90,
+          "toleranciaArrasto": 5,
+          "kmTrajeto": 17.51,
+          "tempoMedioViagem": 80,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "N",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": true,
+          "ativo": true,
+          "sentido": "ida",
+          "codigosIntegracao": ["1"],
+          "raioTrajeto": 100,
+          "id": "5e8e3bbf4be5542e43e539e9"
+        },
+        {
+          "_id": "5e8e3bbf4be5542e43e539ea",
+          "id_migracao": 8640,
+          "externalId": "0",
+          "nome": "01 - Taboão / Sentido Esperança",
+          "colorIdx": 3,
+          "qtdTransmisoesInicial": 1,
+          "qtdTransmisoesFinal": 1,
+          "percentConclusao": 70,
+          "toleranciaArrasto": 5,
+          "kmTrajeto": 17.99,
+          "tempoMedioViagem": 80,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "S",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": true,
+          "ativo": true,
+          "sentido": "volta",
+          "codigosIntegracao": ["1"],
+          "raioTrajeto": 80,
+          "id": "5e8e3bbf4be5542e43e539ea"
+        }
+      ],
+      "id": "5e8e3bbf4be5542e43e539eb"
     },
-    { 
-      _id: "2",
-      id: "2", 
-      clienteId: 1,
-      id_migracao: 2, 
-      descr: "Linha 2 - Zona Norte", 
-      cor: "#00FF00",
-      codigo: "L02",
-      numero: "002",
-      ativo: true,
-      trajetos: []
+    {
+      "_id": "5e8e3bbf4be5542e43e539ec",
+      "clienteId": 1314,
+      "id_migracao": 3211,
+      "descr": "02 - Centro / Vila Nova",
+      "numero": "02",
+      "trajetos": [
+        {
+          "_id": "5e8e3bbf4be5542e43e539ed",
+          "id_migracao": 8641,
+          "externalId": "0",
+          "nome": "02 - Centro / Sentido Vila Nova",
+          "colorIdx": 2,
+          "qtdTransmisoesInicial": 1,
+          "qtdTransmisoesFinal": 1,
+          "percentConclusao": 85,
+          "toleranciaArrasto": 3,
+          "kmTrajeto": 12.8,
+          "tempoMedioViagem": 65,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "N",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": false,
+          "ativo": true,
+          "sentido": "ida",
+          "codigosIntegracao": ["2"],
+          "raioTrajeto": 90,
+          "id": "5e8e3bbf4be5542e43e539ed"
+        }
+      ],
+      "id": "5e8e3bbf4be5542e43e539ec"
     },
-    { 
-      _id: "3",
-      id: "3", 
-      clienteId: 1,
-      id_migracao: 3, 
-      descr: "Linha 3 - Zona Sul", 
-      cor: "#0000FF",
-      codigo: "L03",
-      numero: "003",
-      ativo: true,
-      trajetos: []
+    {
+      "_id": "5e8e3bbf4be5542e43e539ee",
+      "clienteId": 1314,
+      "id_migracao": 3212,
+      "descr": "03 - Terminal / Shopping",
+      "numero": "03",
+      "trajetos": [
+        {
+          "_id": "5e8e3bbf4be5542e43e539ef",
+          "id_migracao": 8642,
+          "externalId": "0",
+          "nome": "03 - Terminal / Sentido Shopping",
+          "colorIdx": 1,
+          "qtdTransmisoesInicial": 2,
+          "qtdTransmisoesFinal": 2,
+          "percentConclusao": 95,
+          "toleranciaArrasto": 2,
+          "kmTrajeto": 8.5,
+          "tempoMedioViagem": 45,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "E",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": false,
+          "ativo": true,
+          "sentido": "ida",
+          "codigosIntegracao": ["3A"],
+          "raioTrajeto": 75,
+          "id": "5e8e3bbf4be5542e43e539ef"
+        },
+        {
+          "_id": "5e8e3bbf4be5542e43e539f0",
+          "id_migracao": 8643,
+          "externalId": "0",
+          "nome": "03 - Shopping / Sentido Terminal",
+          "colorIdx": 1,
+          "qtdTransmisoesInicial": 2,
+          "qtdTransmisoesFinal": 2,
+          "percentConclusao": 92,
+          "toleranciaArrasto": 2,
+          "kmTrajeto": 8.2,
+          "tempoMedioViagem": 40,
+          "sentidoTipo": "P",
+          "headwayCopiloto": 0,
+          "orientacao": "W",
+          "consorcioSinoticoUnificado": [],
+          "garagem": [],
+          "despachoSemCor": false,
+          "ativo": true,
+          "sentido": "volta",
+          "codigosIntegracao": ["3B"],
+          "raioTrajeto": 75,
+          "id": "5e8e3bbf4be5542e43e539f0"
+        }
+      ],
+      "id": "5e8e3bbf4be5542e43e539ee"
     }
   ];
   return (
@@ -84,7 +196,7 @@ const TestePage = () => {
               <div>
                 <h3 className="text-lg font-medium mb-2">LinhaTrajetoSelector</h3>
                 <div className="border-2 border-dashed border-border rounded-lg p-4">
-                  <LinhaTrajetoSelector linhas={linhasExemplo} />
+                  <LinhaTrajetoSelector linhas={sampleLinhas} />
                 </div>
               </div>
             </div>
