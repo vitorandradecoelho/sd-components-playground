@@ -202,7 +202,7 @@ const GuiaComponente = () => {
             selectedTrajetoIds={selectedTrajetoIds}
             onLinhaChange={(linha) => {
               setSelectedLinhaId(linha?._id || '');
-              success('Linha selecionada: ${linha?.descr || 'Nenhuma'}'');
+              success('Linha selecionada: ${linha.descr || 'Nenhuma'}'');
             }}
             onTrajetoChange={(trajetos) => {
               setSelectedTrajetoIds(trajetos.map(t => t._id));
