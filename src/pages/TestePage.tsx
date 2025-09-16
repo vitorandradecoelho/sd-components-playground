@@ -90,13 +90,21 @@ const TestePage = () => {
           </div>
         </main>
 
-        <footer className="mt-12 text-center">
-          <a 
-            href="/" 
-            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
-          >
-            ← Voltar para a página inicial
-          </a>
+        <footer className="mt-12 text-center space-y-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/" 
+              className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+            >
+              ← Voltar para a página inicial
+            </a>
+            <a 
+              href="/guia" 
+              className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+            >
+              Ver guia do componente →
+            </a>
+          </div>
         </footer>
       </div>
     </div>
