@@ -38,7 +38,30 @@ const GuiaComponente = () => {
 
   const installCommand = "npm install @vitorandradecoelho/sd-components";
   const importCode = `import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';`;
- // Dados de exemplo corrigidos
+  const usageCode = `import { useState } from 'react';
+import { LinhaTrajetoSelector, type Linha } from '@vitorandradecoelho/sd-components';
+
+export default function Exemplo() {
+  const [selectedLinhaId, setSelectedLinhaId] = useState('');
+  const [selectedTrajetoIds, setSelectedTrajetoIds] = useState<string[]>([]);
+  const linhas: Linha[] = sampleLinhas; // veja o exemplo de dados acima
+
+  return (
+    <LinhaTrajetoSelector
+      linhas={linhas}
+      selectedLinhaId={selectedLinhaId}
+      selectedTrajetoIds={selectedTrajetoIds}
+      onLinhaChange={(linha) => setSelectedLinhaId(linha?._id ?? '')}
+      onTrajetoChange={(trajetos) => setSelectedTrajetoIds(trajetos.map(t => t._id))}
+      linhaPlaceholder="Escolha uma linha de ônibus..."
+      trajetoPlaceholder="Escolha trajetos..."
+      linhaLabel="Linha de Ônibus"
+      trajetoLabel="Trajetos"
+    />
+  );
+}`;
+
+  // Dados de exemplo corrigidos
 const exampleData = [
   {
     "_id": "5e8e3bbf4be5542e43e539eb",
@@ -347,7 +370,7 @@ export default MinhaPagina;`;
     }
   ];
 
-  return (
+   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         <header className="mb-8 text-center">
@@ -445,9 +468,9 @@ export default MinhaPagina;`;
                 <CardContent>
                   <div className="relative">
                     <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-                      <code>{exampleData}</code>
+                      <code>{JSON.stringify(exampleData, null, 2)}</code>
                     </pre>
-                    <CopyButton text={exampleData} copyKey="data" />
+                    <CopyButton text={JSON.stringify(exampleData, null, 2)} copyKey="data" />
                   </div>
                 </CardContent>
               </Card>
