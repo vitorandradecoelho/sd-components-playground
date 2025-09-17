@@ -1,4 +1,5 @@
 import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';
+import { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
@@ -155,6 +156,8 @@ const TestePage = () => {
       "id": "5e8e3bbf4be5542e43e539ee"
     }
   ];
+  const [selectedLinhaId, setSelectedLinhaId] = useState('');
+  const [selectedTrajetoIds, setSelectedTrajetoIds] = useState<string[]>([]);
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
@@ -196,7 +199,17 @@ const TestePage = () => {
               <div>
                 <h3 className="text-lg font-medium mb-2">LinhaTrajetoSelector</h3>
                 <div className="border-2 border-dashed border-border rounded-lg p-4">
-                  <LinhaTrajetoSelector linhas={sampleLinhas} />
+                  <LinhaTrajetoSelector 
+                    linhas={sampleLinhas}
+                    selectedLinhaId={selectedLinhaId}
+                    selectedTrajetoIds={selectedTrajetoIds}
+                    onLinhaChange={(linha) => setSelectedLinhaId(linha?._id ?? '')}
+                    onTrajetoChange={(trajetos) => setSelectedTrajetoIds(trajetos.map(t => t._id))}
+                    linhaPlaceholder="Escolha uma linha de ônibus..."
+                    trajetoPlaceholder="Escolha trajetos..."
+                    linhaLabel="Linha de Ônibus"
+                    trajetoLabel="Trajetos"
+                  />
                 </div>
               </div>
             </div>

@@ -8,6 +8,9 @@ import { Copy, Check, Code2, Package, PlayCircle } from "lucide-react";
 
 const GuiaComponente = () => {
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
+  // Estado para a demonstração ao vivo
+  const [demoSelectedLinhaId, setDemoSelectedLinhaId] = useState('');
+  const [demoSelectedTrajetoIds, setDemoSelectedTrajetoIds] = useState<string[]>([]);
 
   const copyToClipboard = async (text: string, key: string) => {
     try {
@@ -526,7 +529,17 @@ export default MinhaPagina;`;
             </CardHeader>
             <CardContent>
               <div className="border-2 border-dashed border-border rounded-lg p-4">
-                <LinhaTrajetoSelector linhas={linhasDemo} />
+                <LinhaTrajetoSelector
+                  linhas={linhasDemo}
+                  selectedLinhaId={demoSelectedLinhaId}
+                  selectedTrajetoIds={demoSelectedTrajetoIds}
+                  onLinhaChange={(linha) => setDemoSelectedLinhaId(linha?._id ?? '')}
+                  onTrajetoChange={(trajetos) => setDemoSelectedTrajetoIds(trajetos.map(t => t._id))}
+                  linhaPlaceholder="Escolha uma linha de ônibus..."
+                  trajetoPlaceholder="Escolha trajetos..."
+                  linhaLabel="Linha de Ônibus"
+                  trajetoLabel="Trajetos"
+                />
               </div>
             </CardContent>
           </Card>
