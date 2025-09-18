@@ -205,9 +205,7 @@ const TestePage = () => {
                     linhas={sampleLinhas}
                     selectedLinhaId={selectedLinhaId}
                     selectedTrajetoIds={selectedTrajetoIds}
-                   /* onLinhaChange={(linha) => setSelectedLinhaId(linha?._id ?? '')}*/
-                    onTrajetoChange={(trajetos) => setSelectedTrajetoIds(trajetos.map(t => t._id))}
-                    linhaPlaceholder="Escolha uma linha de ônibus..."
+                       linhaPlaceholder="Escolha uma linha de ônibus..."
                     trajetoPlaceholder="Escolha trajetos..."
                     linhaLabel="Linha de Ônibus"
                     trajetoLabel="Trajetos"
