@@ -211,6 +211,7 @@ const TestePage = () => {
                     trajetoPlaceholder="Escolha trajetos..."
                     linhaLabel="Linha de Ônibus"
                     trajetoLabel="Trajetos"
+                    multiSelectTrajeto=true
                   />
                 </div>
               </div>
