@@ -1,5 +1,6 @@
 /*import { LinhaTrajetoSelector, type Linha, type Trajeto } from '@vitorandradecoelho/sd-components';*/
 import { LinhaTrajetoSelector } from '@vitorandradecoelho/sd-components';
+import '@vitorandradecoelho/sd-components/dist/styles.css';
 import { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
